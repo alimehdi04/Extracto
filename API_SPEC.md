@@ -2,8 +2,6 @@
 
 Extracto operates as an asynchronous, event-driven system rather than a traditional synchronous REST API. The entry point is an AWS S3 `PUT` event, and the exit point is a DynamoDB table record.
 
-Below is the Swagger-style specification detailing the expected inputs, triggers, and the final data schema available for downstream frontend consumption.
-
 ---
 
 ## 📡 Endpoints (Event Triggers)
