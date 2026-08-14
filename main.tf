@@ -9,7 +9,8 @@ variable "gemini_api_key" {
 
 # 1. The S3 Bucket (For Document Uploads)
 resource "aws_s3_bucket" "extracto_docs" {
-  bucket = "extracto-docs-alimehdi-2026" 
+  bucket        = "extracto-docs-alimehdi-2026"
+  force_destroy = true
 }
 
 # 2. The DynamoDB Table (For AI Results - Strictly Free Tier)
