@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "extracto-tf-state-alimehdi-2026"
+    key    = "extracto/terraform.tfstate"
+    region = "ap-south-1"
+  }
+}
+
 provider "aws" {
   region = "ap-south-1" 
 }
