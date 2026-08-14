@@ -1,0 +1,1 @@
+Ali Mehdi Naqvi. Experienced software engineer. Highly skilled in Java, Spring Boot, React, Next.js, and deploying cloud infrastructure on Render and Supabase.
