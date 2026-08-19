@@ -19,6 +19,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Run Test Suite
+        run: |
+          pip install -r requirements-dev.txt
+          pytest tests/
+
+      - name: Bundle Lambda Dependencies
+        run: |
+          # This installs PyPDF2 directly into the src/ folder so Terraform zips it!
+          pip install -r requirements.txt -t src/
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
