@@ -26,12 +26,18 @@ jobs:
 
       - name: Run Test Suite
         run: |
+          # 1. Install the core app dependencies (like PyPDF2) into the runner's environment
+          pip install -r requirements.txt
+          
+          # 2. Install the testing dependencies (like pytest and moto)
           pip install -r requirements-dev.txt
+          
+          # 3. Run the tests
           pytest tests/
 
       - name: Bundle Lambda Dependencies
         run: |
-          # This installs PyPDF2 directly into the src/ folder so Terraform zips it!
+          # Install PyPDF2 directly into the src/ folder so Terraform can zip it for AWS
           pip install -r requirements.txt -t src/
 
       - name: Setup Terraform
