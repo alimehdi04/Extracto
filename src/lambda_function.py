@@ -14,7 +14,7 @@ table = dynamodb.Table('ExtractoResults')
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
 
 def call_gemini(prompt_text):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1alpha/models/gemini-3.6-flash:generateContent?key={GEMINI_API_KEY}"
     headers = {"Content-Type": "application/json"}
     payload = {
         "contents": [
